@@ -1,0 +1,152 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    padding: 40px 32.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(
+        rgb(140, 147, 180),
+        rgb(124, 134, 184),
+        rgb(124, 134, 184)
+    );
+    font-family: sans-serif;
+    color: white;
+}
+
+h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.container,
+.other_container {
+    background: linear-gradient(rgb(47, 120, 163), rgb(85, 98, 170));
+    width: 310px;
+    height: 220px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 37.5px;
+}
+
+.location,
+.other_location {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.timezone,
+.other_timezone {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-left: 10px;
+}
+.weatherIcon,
+.other_weatherIcon {
+    width: 70px;
+    height: 70px;
+}
+
+.info,
+.other_info {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temp_container {
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: 200ms ease-out;
+}
+.temp_container:hover {
+    color: rgba(255, 255, 255, 0.712);
+}
+.min_max,
+.other_min_max {
+    width: 24.2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 5px;
+    text-align: right;
+}
+.max,
+.other_max {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.min,
+.other_min {
+    width: 100%;
+}
+.temp,
+.other_temp {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.temp_degree,
+.other_temp_degree {
+    font-size: 3.4rem;
+    font-weight: 400;
+    margin-right: 2px;
+    width: 64px;
+    text-align: right;
+}
+.temp_unit,
+.other_temp_unit {
+    font-size: 2.5rem;
+    width: 45px;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    padding-right: 3px;
+}
+#searchCity {
+    width: 120px;
+    height: 20px;
+    color: rgb(226, 226, 226);
+    background-color: transparent;
+    padding-left: 6px;
+    border-radius: 5px;
+    border: 1px solid rgb(192, 192, 192);
+    transition: 200ms ease-out;
+}
+#searchCity:hover {
+    border: 1px solid rgb(226, 226, 226);
+}
+#searchCity::placeholder {
+    color: rgb(192, 192, 192);
+    opacity: 0.8;
+}
+#searchBtn {
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(3px);
+}
+#searchBtn img {
+    width: 100%;
+    height: 100%;
+}
