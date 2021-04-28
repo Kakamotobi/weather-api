@@ -1,6 +1,3 @@
-// -----Proxy for localhost----- //
-const proxy = "https://cors-anywhere.herokuapp.com/";
-
 // -----Current Location Weather----- //
 window.addEventListener("load", function () {
     // Select DOM objects
@@ -22,7 +19,7 @@ window.addEventListener("load", function () {
                 const lat = position.coords.latitude;
 
                 // API Current Location
-                const api = `${proxy}api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
+                const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
                 fetch(api)
                     .then((res) => {
                         return res.json();
@@ -101,7 +98,7 @@ form.addEventListener("submit", function (evt) {
     const tempDesc = document.querySelector(".other_temp_desc");
 
     // API search city
-    const api = `${proxy}api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
+    const api = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
     fetch(api)
         .then((res) => {
             return res.json();
