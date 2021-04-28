@@ -19,7 +19,7 @@ Weather web app using APIs from [Weather API - OpenWeatherMap](https://openweath
 
 ## Link
 
-Live-site URL: []()
+Live-site URL: https://weather-api-gamma.vercel.app
 
 ## My Process
 
@@ -35,6 +35,7 @@ Live-site URL: []()
   - `navigator.geolocation.getCurrentPosition()`
   - Access data from API using `fetch()`
   - API and DOM Manipulation
+- Mixed Content (Safari)
 
 ### Queries
 - Function with a lot of parameters. How many is too much?
