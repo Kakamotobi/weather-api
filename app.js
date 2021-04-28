@@ -176,7 +176,7 @@ function displayInfo(
     descData
 ) {
     timezone.textContent = `${cityData}, ${ctryData}`;
-    weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${iconData}.png" width="70px" height="70px"/>`;
+    weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${iconData}.png" width="70px" height="70px"/>`;
     max.textContent = Math.round(celsius(maxTempData)) + "°";
     min.textContent = Math.round(celsius(minTempData)) + "°";
     tempDegree.textContent = Math.round(celsius(tempData));
