@@ -35,7 +35,7 @@ Live-site URL: https://weather-api-gamma.vercel.app
   - `navigator.geolocation.getCurrentPosition()`
   - Access data from API using `fetch()`
   - API and DOM Manipulation
-- Mixed Content (Safari)
+- Mixed Content Page (Safari)
 
 ### Queries
 - Function with a lot of parameters. How many is too much?
