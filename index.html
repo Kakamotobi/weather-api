@@ -8,41 +8,41 @@
         <title>Weather API</title>
     </head>
     <body>
-        <div class="current">
+        <div class="currentTimezone">
             <h2>Current Timezone</h2>
-            <div class="container">
-                <div class="location">
-                    <h3 class="timezone">Timezone</h3>
-                    <div class="weatherIcon"></div>
+            <div class="currentTimezone__container">
+                <div class="currentTimezone__location">
+                    <h3 class="currentTimezone__timezone">Timezone</h3>
+                    <div class="currentTimezone__weatherIcon"></div>
                 </div>
 
-                <div class="info">
-                    <div class="temp_container">
-                        <div class="min_max">
-                            <span class="max"></span>
-                            <span class="min"></span>
+                <div class="currentTimezone__weatherInfo">
+                    <div class="currentTimezone__tempContainer">
+                        <div class="currentTimezone__minMax">
+                            <span class="currentTimezone__max"></span>
+                            <span class="currentTimezone__min"></span>
                         </div>
-                        <div class="temp">
-                            <h3 class="temp_degree"></h3>
-                            <span class="temp_unit"></span>
+                        <div class="currentTimezone__temp">
+                            <h3 class="currentTimezone__tempDegree"></h3>
+                            <span class="currentTimezone__tempUnit"></span>
                         </div>
                     </div>
-                    <div class="temp_desc"></div>
+                    <div class="currentTimezone__tempDesc"></div>
                 </div>
             </div>
         </div>
 
-        <!-- More cities -->
-        <div class="other">
+        <!-- Another City -->
+        <div class="otherTimezone">
             <h2>Other Timezone</h2>
-            <div class="search">
+            <div class="otherTimezone__search">
                 <form action="/">
                     <input
                         type="text"
                         placeholder="search city"
-                        id="searchCity"
+                        id="otherTimezone__searchCity"
                     />
-                    <button id="searchBtn">
+                    <button id="otherTimezone__searchBtn">
                         <img
                             src="styles/magnifying-glass.svg"
                             alt="search button"
@@ -51,24 +51,24 @@
                 </form>
             </div>
 
-            <div class="other_container">
-                <div class="other_location">
-                    <h3 class="other_timezone">Timezone</h3>
-                    <div class="other_weatherIcon"></div>
+            <div class="otherTimezone__container">
+                <div class="otherTimezone__location">
+                    <h3 class="otherTimezone__timezone">Timezone</h3>
+                    <div class="otherTimezone__weatherIcon"></div>
                 </div>
 
-                <div class="other_info">
-                    <div class="temp_container">
-                        <div class="other_min_max">
-                            <span class="other_max"></span>
-                            <span class="other_min"></span>
+                <div class="otherTimezone__weatherInfo">
+                    <div class="otherTimezone__tempContainer">
+                        <div class="otherTimezone__minMax">
+                            <span class="otherTimezone__max"></span>
+                            <span class="otherTimezone__min"></span>
                         </div>
-                        <div class="other_temp">
-                            <h4 class="other_temp_degree"></h4>
-                            <span class="other_temp_unit"></span>
+                        <div class="otherTimezone__temp">
+                            <h4 class="otherTimezone__tempDegree"></h4>
+                            <span class="otherTimezone__tempUnit"></span>
                         </div>
                     </div>
-                    <div class="other_temp_desc"></div>
+                    <div class="otherTimezone__tempDesc"></div>
                 </div>
             </div>
         </div>
