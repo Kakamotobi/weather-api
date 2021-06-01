@@ -1,15 +1,21 @@
-// -----Current Location Weather----- //
-window.addEventListener("load", function () {
-    // Select DOM objects
-    const timezone = document.querySelector(".timezone");
-    const weatherIcon = document.querySelector(".weatherIcon");
-    const max = document.querySelector(".max");
-    const min = document.querySelector(".min");
-    const temp = document.querySelector(".temp");
-    const tempDegree = document.querySelector(".temp_degree");
-    const tempUnit = document.querySelector(".temp_unit");
-    const tempDesc = document.querySelector(".temp_desc");
+// ----------Current Timezone Weather---------- //
 
+// Select DOM objects
+const currentTzTimezone = document.querySelector(".currentTimezone__timezone");
+const currentTzWeatherIcon = document.querySelector(
+    ".currentTimezone__weatherIcon"
+);
+const currentTzMax = document.querySelector(".currentTimezone__max");
+const currentTzMin = document.querySelector(".currentTimezone__min");
+const currentTzTemp = document.querySelector(".currentTimezone__temp");
+const currentTzTempDegree = document.querySelector(
+    ".currentTimezone__tempDegree"
+);
+const currentTzTempUnit = document.querySelector(".currentTimezone__tempUnit");
+const currentTzTempDesc = document.querySelector(".currentTimezone__tempDesc");
+
+// Geolocation event listener
+window.addEventListener("load", function () {
     // if browser supports geolocation
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -18,7 +24,7 @@ window.addEventListener("load", function () {
                 const lon = position.coords.longitude;
                 const lat = position.coords.latitude;
 
-                // API Current Location
+                // API current timezone
                 const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
                 fetch(api)
                     .then((res) => {
@@ -26,42 +32,42 @@ window.addEventListener("load", function () {
                     })
                     .then((data) => {
                         // Select API objects
-                        const cityData = data.name;
-                        const ctryData = data.sys.country;
-                        const iconData = data.weather[0].icon;
-                        const maxTempData = data.main.temp_max;
-                        const minTempData = data.main.temp_min;
-                        const tempData = data.main.temp;
-                        const descData = data.weather[0].description;
+                        const dataCity = data.name;
+                        const dataCtry = data.sys.country;
+                        const dataIcon = data.weather[0].icon;
+                        const dataMaxTemp = data.main.temp_max;
+                        const dataMinTemp = data.main.temp_min;
+                        const dataTemp = data.main.temp;
+                        const dataDesc = data.weather[0].description;
 
                         // Update display
                         displayInfo(
-                            timezone,
-                            weatherIcon,
-                            max,
-                            min,
-                            tempDegree,
-                            tempUnit,
-                            tempDesc,
-                            cityData,
-                            ctryData,
-                            iconData,
-                            maxTempData,
-                            minTempData,
-                            tempData,
-                            descData
+                            currentTzTimezone,
+                            currentTzWeatherIcon,
+                            currentTzMax,
+                            currentTzMin,
+                            currentTzTempDegree,
+                            currentTzTempUnit,
+                            currentTzTempDesc,
+                            dataCity,
+                            dataCtry,
+                            dataIcon,
+                            dataMaxTemp,
+                            dataMinTemp,
+                            dataTemp,
+                            dataDesc
                         );
 
                         // Convert between celsius/fahrenheit
-                        temp.addEventListener("click", () => {
+                        currentTzTemp.addEventListener("click", () => {
                             unitConversion(
-                                tempUnit,
-                                tempDegree,
-                                max,
-                                min,
-                                tempData,
-                                maxTempData,
-                                minTempData
+                                currentTzTempUnit,
+                                currentTzTempDegree,
+                                currentTzMax,
+                                currentTzMin,
+                                dataTemp,
+                                dataMaxTemp,
+                                dataMinTemp
                             );
                         });
                     })
@@ -71,93 +77,98 @@ window.addEventListener("load", function () {
                     });
             },
             // Display error when user denies geolocation
-            (err) => (tempDesc.textContent = err.message)
+            (err) => (currentTzTempDesc.textContent = err.message)
         );
     }
     // When browser doesn't support geolocation
     else {
-        tempDesc.textContent = "Browser doesn't Support Geolocation";
+        currentTzTempDesc.textContent = "Browser Doesn't Support Geolocation";
     }
 });
 
-// -----Other Location Weather----- //
-const form = document.querySelector("form");
+// ----------Other Timezone Weather---------- //
 
+// Select DOM objects
+const form = document.querySelector("form");
+const otherTzTimezone = document.querySelector(".otherTimezone__timezone");
+const otherTzWeatherIcon = document.querySelector(
+    ".otherTimezone__weatherIcon"
+);
+const otherTzMax = document.querySelector(".otherTimezone__max");
+const otherTzMin = document.querySelector(".otherTimezone__min");
+const otherTzTemp = document.querySelector(".otherTimezone__temp");
+const otherTzTempDegree = document.querySelector(".otherTimezone__tempDegree");
+const otherTzTempUnit = document.querySelector(".otherTimezone__tempUnit");
+const otherTzTempDesc = document.querySelector(".otherTimezone__tempDesc");
+
+// Search submit event listener
 form.addEventListener("submit", function (evt) {
     evt.preventDefault();
-    const searchCity = document.querySelector("#searchCity");
+    const otherTzSearchCity = document.querySelector(
+        "#otherTimezone__searchCity"
+    );
 
-    // Select DOM objects
-    const timezone = document.querySelector(".other_timezone");
-    const weatherIcon = document.querySelector(".other_weatherIcon");
-    const max = document.querySelector(".other_max");
-    const min = document.querySelector(".other_min");
-    const temp = document.querySelector(".other_temp");
-    const tempDegree = document.querySelector(".other_temp_degree");
-    const tempUnit = document.querySelector(".other_temp_unit");
-    const tempDesc = document.querySelector(".other_temp_desc");
-
-    // API search city
-    const api = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
+    // API search timezone
+    const api = `https://api.openweathermap.org/data/2.5/weather?q=${otherTzSearchCity.value}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
     fetch(api)
         .then((res) => {
             return res.json();
         })
         .then((data) => {
             // Select API objects
-            const cityData = data.name;
-            const ctryData = data.sys.country;
-            const iconData = data.weather[0].icon;
-            const maxTempData = data.main.temp_max;
-            const minTempData = data.main.temp_min;
-            const tempData = data.main.temp;
-            const descData = data.weather[0].description;
+            const dataCity = data.name;
+            const dataCtry = data.sys.country;
+            const dataIcon = data.weather[0].icon;
+            const dataMaxTemp = data.main.temp_max;
+            const dataMinTemp = data.main.temp_min;
+            const dataTemp = data.main.temp;
+            const dataDesc = data.weather[0].description;
 
-            timezone.textContent = `${cityData}, ${ctryData}`;
-            weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${iconData}.png" width="70px" height="70px"/>`;
-            tempDegree.textContent = Math.round(celsius);
-            tempDesc.textContent = descData;
+            otherTzTimezone.textContent = `${dataCity}, ${dataCtry}`;
+            otherTzWeatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${dataIcon}.png" width="70px" height="70px"/>`;
+            otherTzTempDegree.textContent = Math.round(celsius);
+            otherTzTempDesc.textContent = dataDesc;
 
             // Update display
             displayInfo(
-                timezone,
-                weatherIcon,
-                max,
-                min,
-                tempDegree,
-                tempUnit,
-                tempDesc,
-                cityData,
-                ctryData,
-                iconData,
-                maxTempData,
-                minTempData,
-                tempData,
-                descData
+                otherTzTimezone,
+                otherTzWeatherIcon,
+                otherTzMax,
+                otherTzMin,
+                otherTzTempDegree,
+                otherTzTempUnit,
+                otherTzTempDesc,
+                dataCity,
+                dataCtry,
+                dataIcon,
+                dataMaxTemp,
+                dataMinTemp,
+                dataTemp,
+                dataDesc
             );
 
             // Convert between celsius/fahrenheit
-            temp.addEventListener("click", () => {
+            otherTzTemp.addEventListener("click", () => {
                 unitConversion(
-                    tempUnit,
-                    tempDegree,
-                    max,
-                    min,
-                    tempData,
-                    maxTempData,
-                    minTempData
+                    otherTzTempUnit,
+                    otherTzTempDegree,
+                    otherTzMax,
+                    otherTzMin,
+                    dataTemp,
+                    dataMaxTemp,
+                    dataMinTemp
                 );
             });
         })
         .catch((err) => {
-            otherTimezone.textContent = "Try Again";
+            otherTzTimezone.textContent = "Try Again";
         });
 
     // Reset search value
-    searchCity.value = "";
+    otherTzSearchCity.value = "";
 });
 
-// -----Functions----- //
+// ----------Functions---------- //
 // Function for displaying information
 function displayInfo(
     timezone,
@@ -167,21 +178,21 @@ function displayInfo(
     tempDegree,
     tempUnit,
     tempDesc,
-    cityData,
-    ctryData,
-    iconData,
-    maxTempData,
-    minTempData,
-    tempData,
-    descData
+    dataCity,
+    dataCtry,
+    dataIcon,
+    dataMaxTemp,
+    dataMinTemp,
+    dataTemp,
+    dataDesc
 ) {
-    timezone.textContent = `${cityData}, ${ctryData}`;
-    weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${iconData}.png" width="70px" height="70px"/>`;
-    max.textContent = Math.round(celsius(maxTempData)) + "°";
-    min.textContent = Math.round(celsius(minTempData)) + "°";
-    tempDegree.textContent = Math.round(celsius(tempData));
+    timezone.textContent = `${dataCity}, ${dataCtry}`;
+    weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${dataIcon}.png" width="70px" height="70px"/>`;
+    max.textContent = Math.round(celsius(dataMaxTemp)) + "°";
+    min.textContent = Math.round(celsius(dataMinTemp)) + "°";
+    tempDegree.textContent = Math.round(celsius(dataTemp));
     tempUnit.textContent = "°C";
-    tempDesc.textContent = descData;
+    tempDesc.textContent = dataDesc;
 }
 
 // Kelvin to Celsius
@@ -199,19 +210,19 @@ function unitConversion(
     degree,
     max,
     min,
-    tempData,
-    maxTempData,
-    minTempData
+    dataTemp,
+    dataMaxTemp,
+    dataMinTemp
 ) {
     if (unit.textContent === "°C") {
-        degree.textContent = Math.round(fahrenheit(tempData));
+        degree.textContent = Math.round(fahrenheit(dataTemp));
         unit.textContent = "°F";
-        max.textContent = Math.round(fahrenheit(maxTempData)) + "°";
-        min.textContent = Math.round(fahrenheit(minTempData)) + "°";
+        max.textContent = Math.round(fahrenheit(dataMaxTemp)) + "°";
+        min.textContent = Math.round(fahrenheit(dataMinTemp)) + "°";
     } else {
-        degree.textContent = Math.round(celsius(tempData));
+        degree.textContent = Math.round(celsius(dataTemp));
         unit.textContent = "°C";
-        max.textContent = Math.round(celsius(maxTempData)) + "°";
-        min.textContent = Math.round(celsius(minTempData)) + "°";
+        max.textContent = Math.round(celsius(dataMaxTemp)) + "°";
+        min.textContent = Math.round(celsius(dataMinTemp)) + "°";
     }
 }
