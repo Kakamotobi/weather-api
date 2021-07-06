@@ -1,18 +1,18 @@
 // ----------Current Timezone Weather---------- //
 
 // Select DOM Objects
-const currentTzTimezone = document.querySelector(".currentTimezone__timezone");
+const currentTzTimezone = document.querySelector(".current-timezone__timezone");
 const currentTzWeatherIcon = document.querySelector(
-	".currentTimezone__weatherIcon"
+	".current-timezone__weatherIcon"
 );
-const currentTzMax = document.querySelector(".currentTimezone__max");
-const currentTzMin = document.querySelector(".currentTimezone__min");
-const currentTzTemp = document.querySelector(".currentTimezone__temp");
+const currentTzMax = document.querySelector(".current-timezone__max");
+const currentTzMin = document.querySelector(".current-timezone__min");
+const currentTzTemp = document.querySelector(".current-timezone__temp");
 const currentTzTempDegree = document.querySelector(
-	".currentTimezone__tempDegree"
+	".current-timezone__tempDegree"
 );
-const currentTzTempUnit = document.querySelector(".currentTimezone__tempUnit");
-const currentTzTempDesc = document.querySelector(".currentTimezone__tempDesc");
+const currentTzTempUnit = document.querySelector(".current-timezone__tempUnit");
+const currentTzTempDesc = document.querySelector(".current-timezone__tempDesc");
 
 // Current Timezone Display Object
 const currentTimezoneDisplay = {
@@ -82,16 +82,16 @@ window.addEventListener("load", function () {
 
 // Select DOM Objects
 const form = document.querySelector("form");
-const otherTzTimezone = document.querySelector(".otherTimezone__timezone");
+const otherTzTimezone = document.querySelector(".other-timezone__timezone");
 const otherTzWeatherIcon = document.querySelector(
-	".otherTimezone__weatherIcon"
+	".other-timezone__weatherIcon"
 );
-const otherTzMax = document.querySelector(".otherTimezone__max");
-const otherTzMin = document.querySelector(".otherTimezone__min");
-const otherTzTemp = document.querySelector(".otherTimezone__temp");
-const otherTzTempDegree = document.querySelector(".otherTimezone__tempDegree");
-const otherTzTempUnit = document.querySelector(".otherTimezone__tempUnit");
-const otherTzTempDesc = document.querySelector(".otherTimezone__tempDesc");
+const otherTzMax = document.querySelector(".other-timezone__max");
+const otherTzMin = document.querySelector(".other-timezone__min");
+const otherTzTemp = document.querySelector(".other-timezone__temp");
+const otherTzTempDegree = document.querySelector(".other-timezone__tempDegree");
+const otherTzTempUnit = document.querySelector(".other-timezone__tempUnit");
+const otherTzTempDesc = document.querySelector(".other-timezone__tempDesc");
 
 // Other Timezone Display Object
 const otherTimezoneDisplay = {
@@ -109,7 +109,7 @@ const otherTimezoneDisplay = {
 form.addEventListener("submit", function (evt) {
 	evt.preventDefault();
 	const otherTzSearchCity = document.querySelector(
-		"#otherTimezone__searchCity"
+		"#other-timezone__searchCity"
 	);
 
 	// API Other Timezone

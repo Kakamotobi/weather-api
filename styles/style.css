@@ -27,8 +27,8 @@ h2 {
     text-align: center;
 }
 
-.currentTimezone__container,
-.otherTimezone__container {
+.current-timezone__container,
+.other-timezone__container {
     background: linear-gradient(rgb(47, 120, 163), rgb(85, 98, 170));
     width: 310px;
     height: 220px;
@@ -38,28 +38,28 @@ h2 {
     margin-bottom: 37.5px;
 }
 
-.currentTimezone__location,
-.otherTimezone__location {
+.current-timezone__location,
+.other-timezone__location {
     height: 30%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.currentTimezone__timezone,
-.otherTimezone__timezone {
+.current-timezone__timezone,
+.other-timezone__timezone {
     font-size: 1.5rem;
     font-weight: 400;
     margin-left: 10px;
 }
-.currentTimezone__weatherIcon,
-.otherTimezone__weatherIcon {
+.current-timezone__weatherIcon,
+.other-timezone__weatherIcon {
     width: 70px;
     height: 70px;
 }
 
-.currentTimezone__weatherInfo,
-.otherTimezone__weatherInfo {
+.current-timezone__weatherInfo,
+.other-timezone__weatherInfo {
     height: 70%;
     width: 100%;
     display: flex;
@@ -68,19 +68,19 @@ h2 {
     align-items: center;
 }
 
-.currentTimezone__tempContainer,
-.otherTimezone__tempContainer {
+.current-timezone__tempContainer,
+.other-timezone__tempContainer {
     display: flex;
     justify-content: flex-start;
     cursor: pointer;
     transition: 200ms ease-out;
 }
-.currentTimezone__tempContainer:hover,
-.otherTimezone__tempContainer:hover {
+.current-timezone__tempContainer:hover,
+.other-timezone__tempContainer:hover {
     color: rgba(255, 255, 255, 0.712);
 }
-.currentTimezone__minMax,
-.otherTimezone__minMax {
+.current-timezone__minMax,
+.other-timezone__minMax {
     width: 24.2px;
     display: flex;
     flex-direction: column;
@@ -88,42 +88,42 @@ h2 {
     margin-right: 5px;
     text-align: right;
 }
-.currentTimezone__max,
-.otherTimezone__max {
+.current-timezone__max,
+.other-timezone__max {
     width: 100%;
     margin-bottom: 5px;
 }
-.currentTimezone__min,
-.otherTimezone__min {
+.current-timezone__min,
+.other-timezone__min {
     width: 100%;
 }
-.currentTimezone__temp,
-.otherTimezone__temp {
+.current-timezone__temp,
+.other-timezone__temp {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-.currentTimezone__tempDegree,
-.otherTimezone__tempDegree {
+.current-timezone__tempDegree,
+.other-timezone__tempDegree {
     font-size: 3.4rem;
     font-weight: 400;
     margin-right: 2px;
     width: 64px;
     text-align: right;
 }
-.currentTimezone__tempUnit,
-.otherTimezone__tempUnit {
+.current-timezone__tempUnit,
+.other-timezone__tempUnit {
     font-size: 2.5rem;
     width: 45px;
 }
 
-.otherTimezone__search {
+.other-timezone__search {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 10px;
     padding-right: 3px;
 }
-#otherTimezone__searchCity {
+#other-timezone__searchCity {
     width: 120px;
     height: 20px;
     color: rgb(226, 226, 226);
@@ -134,17 +134,17 @@ h2 {
     transition: 200ms ease-out;
 }
 /* Doesn't work.. */
-#otherTimezone__searchCity:active {
+#other-timezone__searchCity:active {
     font-size: 16px;
 }
-#otherTimezone__searchCity:hover {
+#other-timezone__searchCity:hover {
     border: 1px solid rgb(226, 226, 226);
 }
-#otherTimezone__searchCity::placeholder {
+#other-timezone__searchCity::placeholder {
     color: rgb(192, 192, 192);
     opacity: 0.8;
 }
-#otherTimezone__searchBtn {
+#other-timezone__searchBtn {
     width: 18px;
     height: 18px;
     background-color: transparent;
@@ -152,7 +152,7 @@ h2 {
     cursor: pointer;
     transform: translateY(3px);
 }
-#otherTimezone__searchBtn img {
+#other-timezone__searchBtn img {
     width: 100%;
     height: 100%;
 }

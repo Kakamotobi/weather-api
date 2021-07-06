@@ -1,78 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles/style.css" />
-        <title>Weather API</title>
-    </head>
-    <body>
-        <div class="currentTimezone">
-            <h2>Current Timezone</h2>
-            <div class="currentTimezone__container">
-                <div class="currentTimezone__location">
-                    <h3 class="currentTimezone__timezone">Timezone</h3>
-                    <div class="currentTimezone__weatherIcon"></div>
-                </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<title>Weather API</title>
+	</head>
+	<body>
+		<div class="current-timezone">
+			<h2>Current Timezone</h2>
+			<div class="current-timezone__container">
+				<div class="current-timezone__location">
+					<h3 class="current-timezone__timezone">Timezone</h3>
+					<div class="current-timezone__weatherIcon"></div>
+				</div>
 
-                <div class="currentTimezone__weatherInfo">
-                    <div class="currentTimezone__tempContainer">
-                        <div class="currentTimezone__minMax">
-                            <span class="currentTimezone__max"></span>
-                            <span class="currentTimezone__min"></span>
-                        </div>
-                        <div class="currentTimezone__temp">
-                            <h3 class="currentTimezone__tempDegree"></h3>
-                            <span class="currentTimezone__tempUnit"></span>
-                        </div>
-                    </div>
-                    <div class="currentTimezone__tempDesc"></div>
-                </div>
-            </div>
-        </div>
+				<div class="current-timezone__weatherInfo">
+					<div class="current-timezone__tempContainer">
+						<div class="current-timezone__minMax">
+							<span class="current-timezone__max"></span>
+							<span class="current-timezone__min"></span>
+						</div>
+						<div class="current-timezone__temp">
+							<h3 class="current-timezone__tempDegree"></h3>
+							<span class="current-timezone__tempUnit"></span>
+						</div>
+					</div>
+					<div class="current-timezone__tempDesc"></div>
+				</div>
+			</div>
+		</div>
 
-        <!-- Another City -->
-        <div class="otherTimezone">
-            <h2>Other Timezone</h2>
-            <div class="otherTimezone__search">
-                <form action="/">
-                    <input
-                        type="text"
-                        placeholder="search city"
-                        id="otherTimezone__searchCity"
-                    />
-                    <button id="otherTimezone__searchBtn">
-                        <img
-                            src="styles/magnifying-glass.svg"
-                            alt="search button"
-                        />
-                    </button>
-                </form>
-            </div>
+		<!-- Another City -->
+		<div class="other-timezone">
+			<h2>Other Timezone</h2>
+			<div class="other-timezone__search">
+				<form action="/">
+					<input
+						type="text"
+						placeholder="search city"
+						id="other-timezone__searchCity"
+					/>
+					<button id="other-timezone__searchBtn">
+						<img src="styles/magnifying-glass.svg" alt="search button" />
+					</button>
+				</form>
+			</div>
 
-            <div class="otherTimezone__container">
-                <div class="otherTimezone__location">
-                    <h3 class="otherTimezone__timezone">Timezone</h3>
-                    <div class="otherTimezone__weatherIcon"></div>
-                </div>
+			<div class="other-timezone__container">
+				<div class="other-timezone__location">
+					<h3 class="other-timezone__timezone">Timezone</h3>
+					<div class="other-timezone__weatherIcon"></div>
+				</div>
 
-                <div class="otherTimezone__weatherInfo">
-                    <div class="otherTimezone__tempContainer">
-                        <div class="otherTimezone__minMax">
-                            <span class="otherTimezone__max"></span>
-                            <span class="otherTimezone__min"></span>
-                        </div>
-                        <div class="otherTimezone__temp">
-                            <h4 class="otherTimezone__tempDegree"></h4>
-                            <span class="otherTimezone__tempUnit"></span>
-                        </div>
-                    </div>
-                    <div class="otherTimezone__tempDesc"></div>
-                </div>
-            </div>
-        </div>
+				<div class="other-timezone__weatherInfo">
+					<div class="other-timezone__tempContainer">
+						<div class="other-timezone__minMax">
+							<span class="other-timezone__max"></span>
+							<span class="other-timezone__min"></span>
+						</div>
+						<div class="other-timezone__temp">
+							<h4 class="other-timezone__tempDegree"></h4>
+							<span class="other-timezone__tempUnit"></span>
+						</div>
+					</div>
+					<div class="other-timezone__tempDesc"></div>
+				</div>
+			</div>
+		</div>
 
-        <script src="app.js"></script>
-    </body>
+		<script src="app.js"></script>
+	</body>
 </html>
