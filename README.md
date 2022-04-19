@@ -21,15 +21,14 @@ Weather web app using APIs from [Weather API - OpenWeatherMap](https://openweath
 
 Live-site URL: https://weather-api-gamma.vercel.app
 
-## My Process
+## Development Process
 
 ### Built With
 - HTML
 - CSS
 - JavaScript
 
-### What I Learned/Applied
-- CSS
+### Applied Concepts
 - JS
   - Block and Lexical Scoping
   - `navigator.geolocation.getCurrentPosition()`
