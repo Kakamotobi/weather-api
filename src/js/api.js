@@ -1,5 +1,5 @@
 // Weather & Air Quality Info API
-const BASE_URL1 = "http://api.weatherapi.com/v1";
+const BASE_URL1 = "https://api.weatherapi.com/v1";
 const API_KEY1 = "004d4c8732b1442897341639222004";
 
 // Temp, High/Low, Feels Like & Country Code API
