@@ -1,21 +1,11 @@
 // Function for Displaying Information
 function displayInfo(timezoneDisplay, timezoneData) {
-	const { timezone, weatherIcon, max, min, tempDegree, tempUnit, tempDesc } =
+	const { timezone, weatherIcon, tempDegree, tempUnit, tempDesc } =
 		timezoneDisplay;
-	const {
-		dataCity,
-		dataCtry,
-		dataIcon,
-		dataMaxTemp,
-		dataMinTemp,
-		dataTemp,
-		dataDesc,
-	} = timezoneData;
+	const { dataCity, dataCtry, dataIcon, dataTemp, dataDesc } = timezoneData;
 	timezone.textContent = `${dataCity}, ${dataCtry}`;
-	weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${dataIcon}.png" width="70px" height="70px"/>`;
-	max.textContent = Math.round(celsius(dataMaxTemp)) + "°";
-	min.textContent = Math.round(celsius(dataMinTemp)) + "°";
-	tempDegree.textContent = Math.round(celsius(dataTemp));
+	weatherIcon.innerHTML = `<img src="https:${dataIcon}" width="70px" height="70px" />`;
+	tempDegree.textContent = dataTemp;
 	tempUnit.textContent = "°C";
 	tempDesc.textContent = dataDesc;
 }

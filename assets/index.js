@@ -1,3 +1,6 @@
+const BASE_URL = "http://api.weatherapi.com/v1";
+const API_KEY = "004d4c8732b1442897341639222004";
+
 // ----------Current Timezone Weather---------- //
 
 // Select DOM Objects
@@ -37,22 +40,18 @@ window.addEventListener("load", function () {
 				const lat = position.coords.latitude;
 
 				// API Current Timezone
-				const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
+				const api = `${BASE_URL}/current.json?q=${lat},${lon}&key=${API_KEY}`;
 				fetch(api)
-					.then((res) => {
-						return res.json();
-					})
+					.then((res) => res.json())
 					.then((data) => {
-						const { name, sys, weather, main } = data;
+						const { location, current } = data;
 						// Current Timezone Data Object
 						const currentTimezoneData = {
-							dataCity: name,
-							dataCtry: sys.country,
-							dataIcon: weather[0].icon,
-							dataMaxTemp: main.temp_max,
-							dataMinTemp: main.temp_min,
-							dataTemp: main.temp,
-							dataDesc: weather[0].description,
+							dataCity: location.name,
+							dataCtry: location.country,
+							dataIcon: current.condition.icon,
+							dataTemp: current.temp_c,
+							dataDesc: current.condition.text,
 						};
 
 						// Update Display
@@ -97,8 +96,6 @@ const otherTzTempDesc = document.querySelector(".other-timezone__tempDesc");
 const otherTimezoneDisplay = {
 	timezone: otherTzTimezone,
 	weatherIcon: otherTzWeatherIcon,
-	max: otherTzMax,
-	min: otherTzMin,
 	temp: otherTzTemp,
 	tempDegree: otherTzTempDegree,
 	tempUnit: otherTzTempUnit,
@@ -113,22 +110,18 @@ form.addEventListener("submit", function (evt) {
 	);
 
 	// API Other Timezone
-	const api = `https://api.openweathermap.org/data/2.5/weather?q=${otherTzSearchCity.value}&appid=bff78a7cb5f9a304d7ec8c6a3b4b82ba`;
+	const api = `${BASE_URL}/current.json?q=${otherTzSearchCity.value}&key=${API_KEY}`;
 	fetch(api)
-		.then((res) => {
-			return res.json();
-		})
+		.then((res) => res.json())
 		.then((data) => {
-			const { name, sys, weather, main } = data;
+			const { location, current } = data;
 			// Other Timezone Data Object
 			const otherTimezoneData = {
-				dataCity: name,
-				dataCtry: sys.country,
-				dataIcon: weather[0].icon,
-				dataMaxTemp: main.temp_max,
-				dataMinTemp: main.temp_min,
-				dataTemp: main.temp,
-				dataDesc: weather[0].description,
+				dataCity: location.name,
+				dataCtry: location.country,
+				dataIcon: current.condition.icon,
+				dataTemp: current.temp_c,
+				dataDesc: current.condition.text,
 			};
 
 			// Update Display
