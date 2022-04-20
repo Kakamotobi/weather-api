@@ -4,74 +4,87 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="src/css/index.css" />
 		<title>Weather App</title>
 	</head>
 	<body>
-		<div class="current-timezone">
-			<h2>Current Timezone</h2>
-			<div class="current-timezone__container">
-				<div class="current-timezone__location">
-					<h3 class="current-timezone__timezone">Timezone</h3>
-					<div class="current-timezone__weatherIcon"></div>
-				</div>
-
-				<div class="current-timezone__weatherInfo">
-					<div class="current-timezone__tempContainer">
-						<div class="current-timezone__minMax">
-							<span class="current-timezone__max"></span>
-							<span class="current-timezone__min"></span>
+		<main id="app">
+			<section class="main-panel">
+				<div class="summary">
+					<div class="temp-container">
+						<div class="temp-high-low">
+							<span class="temp-high">22</span>
+							<span class="temp-low">16</span>
 						</div>
-						<div class="current-timezone__temp">
-							<h3 class="current-timezone__tempDegree"></h3>
-							<span class="current-timezone__tempUnit"></span>
-						</div>
+						<span class="temp">20&#176;</span>
 					</div>
-					<div class="current-timezone__tempDesc"></div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Another City -->
-		<div class="other-timezone">
-			<h2>Other Timezone</h2>
-			<div class="other-timezone__search">
-				<form action="/">
-					<input
-						type="text"
-						placeholder="search city"
-						id="other-timezone__searchCity"
-					/>
-					<button id="other-timezone__searchBtn">
-						<img
-							src="src/images/magnifying-glass.svg"
-							alt="search button"
-						/>
-					</button>
-				</form>
-			</div>
-
-			<div class="other-timezone__container">
-				<div class="other-timezone__location">
-					<h3 class="other-timezone__timezone">Timezone</h3>
-					<div class="other-timezone__weatherIcon"></div>
-				</div>
-
-				<div class="other-timezone__weatherInfo">
-					<div class="other-timezone__tempContainer">
-						<div class="other-timezone__minMax">
-							<span class="other-timezone__max"></span>
-							<span class="other-timezone__min"></span>
-						</div>
-						<div class="other-timezone__temp">
-							<h4 class="other-timezone__tempDegree"></h4>
-							<span class="other-timezone__tempUnit"></span>
-						</div>
+					<div class="location-info-container">
+						<h1 class="location">Seoul, KR</h1>
+						<small class="time-date">5:09PM Wed, Apr 20, 2022</small>
 					</div>
-					<div class="other-timezone__tempDesc"></div>
+					<div class="weather-info-container">
+						<span class="weather-icon">O</span>
+						<span class="weather-desc">Sunny</span>
+					</div>
 				</div>
-			</div>
-		</div>
+			</section>
+			<section class="side-panel">
+				<div class="search-section">
+					<form class="search-form" action="/">
+						<input type="text" placeholder="search city" class="search-input" />
+						<button class="search-btn">
+							<img
+								src="src/images/magnifying-glass.svg"
+								alt="Search Button Image"
+							/>
+						</button>
+					</form>
+					<ul class="major-cities">
+						<h3>Major Cities</h3>
+						<li class="major-city">New York</li>
+						<li class="major-city">London</li>
+						<li class="major-city">Paris</li>
+						<li class="major-city">New Delhi</li>
+						<li class="major-city">Sydney</li>
+						<li class="major-city">Seoul</li>
+					</ul>
+				</div>
+				<div class="more-info-section">
+					<ul class="weather-information">
+						<h3>Weather Info</h3>
+						<li>
+							<span>Feels like</span><span id="feels-like">21&#176;</span>
+						</li>
+						<li><span>UV</span><span id="uv-index">6.0</span></li>
+						<li><span>Wind</span><span id="wind">13km/h</span></li>
+						<li><span>Humidity</span><span id="humidity">25%</span></li>
+					</ul>
+					<ul class="air-quality-information">
+						<h3>Air Quality</h3>
+						<h4 class="air-quality-rating">Unhealthy</h4>
+						<li>
+							<span>PM10</span><span id="pm10">97μg/m<sup>3</sup></span>
+						</li>
+						<li>
+							<span>PM2.5</span><span id="pm2_5">87μg/m<sup>3</sup></span>
+						</li>
+						<li>
+							<span>O3</span><span id="ozone">139μg/m<sup>3</sup></span>
+						</li>
+						<li>
+							<span>CO</span
+							><span id="carbon-monoxide">441μg/m<sup>3</sup></span>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
 
 		<script src="src/js/helper.js"></script>
 		<script src="src/js/index.js"></script>
