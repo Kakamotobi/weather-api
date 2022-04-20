@@ -14,77 +14,98 @@
 		<title>Weather App</title>
 	</head>
 	<body>
-		<main id="app">
-			<section class="main-panel">
-				<div class="summary">
-					<div class="temp-container">
-						<div class="temp-high-low">
-							<span class="temp-high">22</span>
-							<span class="temp-low">16</span>
-						</div>
-						<span class="temp">20&#176;</span>
+		<section class="main-panel">
+			<div class="summary">
+				<div class="temp-container">
+					<div class="temp-high-low">
+						<span class="temp-high">22</span>
+						<span class="temp-low">16</span>
 					</div>
-					<div class="location-info-container">
-						<h1 class="location">Seoul, KR</h1>
-						<small class="time-date">5:09PM Wed, Apr 20, 2022</small>
-					</div>
-					<div class="weather-info-container">
-						<span class="weather-icon">O</span>
-						<span class="weather-desc">Sunny</span>
-					</div>
+					<span class="temp">20&#176;</span>
 				</div>
-			</section>
-			<section class="side-panel">
-				<div class="search-section">
-					<form class="search-form" action="/">
-						<input type="text" placeholder="search city" class="search-input" />
-						<button class="search-btn">
-							<img
-								src="src/images/magnifying-glass.svg"
-								alt="Search Button Image"
+				<div class="location-info-container">
+					<h1 class="location">Seoul, KR</h1>
+					<small class="time-date">5:09PM Wed, Apr 20, 2022</small>
+				</div>
+				<div class="weather-info-container">
+					<span class="weather-icon">O</span>
+					<span class="weather-desc">Sunny</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="side-panel">
+			<div class="search-section">
+				<form class="search-form" action="/">
+					<input class="search-input" type="text" placeholder="search city" />
+					<button class="search-btn">
+						<svg viewBox="0 0 30.239 30.239">
+							<path
+								class="search-btn-img"
+								d="M20.194,3.46c-4.613-4.613-12.121-4.613-16.734,0c-4.612,4.614-4.612,12.121,0,16.735   c4.108,4.107,10.506,4.547,15.116,1.34c0.097,0.459,0.319,0.897,0.676,1.254l6.718,6.718c0.979,0.977,2.561,0.977,3.535,0   c0.978-0.978,0.978-2.56,0-3.535l-6.718-6.72c-0.355-0.354-0.794-0.577-1.253-0.674C24.743,13.967,24.303,7.57,20.194,3.46z    M18.073,18.074c-3.444,3.444-9.049,3.444-12.492,0c-3.442-3.444-3.442-9.048,0-12.492c3.443-3.443,9.048-3.443,12.492,0   C21.517,9.026,21.517,14.63,18.073,18.074z"
+								fill="#f5f5f7aa"
 							/>
-						</button>
-					</form>
-					<ul class="major-cities">
-						<h3>Major Cities</h3>
-						<li class="major-city">New York</li>
-						<li class="major-city">London</li>
-						<li class="major-city">Paris</li>
-						<li class="major-city">New Delhi</li>
-						<li class="major-city">Sydney</li>
-						<li class="major-city">Seoul</li>
-					</ul>
-				</div>
-				<div class="more-info-section">
-					<ul class="weather-information">
-						<h3>Weather Info</h3>
-						<li>
-							<span>Feels like</span><span id="feels-like">21&#176;</span>
-						</li>
-						<li><span>UV</span><span id="uv-index">6.0</span></li>
-						<li><span>Wind</span><span id="wind">13km/h</span></li>
-						<li><span>Humidity</span><span id="humidity">25%</span></li>
-					</ul>
-					<ul class="air-quality-information">
-						<h3>Air Quality</h3>
-						<h4 class="air-quality-rating">Unhealthy</h4>
-						<li>
-							<span>PM10</span><span id="pm10">97μg/m<sup>3</sup></span>
-						</li>
-						<li>
-							<span>PM2.5</span><span id="pm2_5">87μg/m<sup>3</sup></span>
-						</li>
-						<li>
-							<span>O3</span><span id="ozone">139μg/m<sup>3</sup></span>
-						</li>
-						<li>
-							<span>CO</span
-							><span id="carbon-monoxide">441μg/m<sup>3</sup></span>
-						</li>
-					</ul>
-				</div>
-			</section>
-		</main>
+						</svg>
+					</button>
+				</form>
+				<ul class="major-cities">
+					<h3>Major Cities</h3>
+					<li class="major-city">New York</li>
+					<li class="major-city">London</li>
+					<li class="major-city">Paris</li>
+					<li class="major-city">New Delhi</li>
+					<li class="major-city">Sydney</li>
+					<li class="major-city">Seoul</li>
+				</ul>
+			</div>
+
+			<div class="more-info-section">
+				<ul class="weather-information">
+					<h3>Weather Info</h3>
+					<li class="information">
+						<span>Feels like</span><span id="feels-like">21&#176;</span>
+					</li>
+					<li class="information">
+						<span>UV</span><span id="uv-index">6.0</span>
+					</li>
+					<li class="information">
+						<span>Wind</span><span id="wind">13km/h</span>
+					</li>
+					<li class="information">
+						<span>Humidity</span><span id="humidity">25%</span>
+					</li>
+					<li class="information">
+						<span>Precipitation</span><span id="humidity">0mm</span>
+					</li>
+					<li class="information">
+						<span>Visibility</span><span id="humidity">10km</span>
+					</li>
+				</ul>
+
+				<ul class="air-quality-information">
+					<h3>Air Quality<span class="air-quality-rating">Unhealthy</span></h3>
+					<li class="information">
+						<span>PM<sub>10</sub></span
+						><span id="pm10">97μg/m<sup>3</sup></span>
+					</li>
+					<li class="information">
+						<span>PM<sub>2.5</sub></span
+						><span id="pm2_5">87μg/m<sup>3</sup></span>
+					</li>
+					<li class="information">
+						<span>O<sub>3</sub></span
+						><span id="ozone">139μg/m<sup>3</sup></span>
+					</li>
+					<li class="information">
+						<span>CO</span><span id="carbon-monoxide">441μg/m<sup>3</sup></span>
+					</li>
+					<li class="information">
+						<span>NO<sub>2</sub></span
+						><span id="carbon-monoxide">441μg/m<sup>3</sup></span>
+					</li>
+				</ul>
+			</div>
+		</section>
 
 		<script src="src/js/helper.js"></script>
 		<script src="src/js/index.js"></script>
