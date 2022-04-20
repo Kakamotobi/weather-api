@@ -9,10 +9,6 @@
 	font-family: "Poppins", sans-serif;
 }
 
-::selection {
-	background: none;
-}
-
 ::-webkit-scrollbar {
 	width: 15px;
 }
@@ -132,10 +128,13 @@ body {
 	background: transparent;
 	border: none;
 	box-shadow: inset -1px -1px 3px 0px var(--quarternary);
+	outline: none;
+	color: var(--text);
 	transition: all 150ms ease-out;
 }
 
-.search-input:hover {
+.search-input:hover,
+.search-input:focus {
 	box-shadow: inset -1px -1px 6px 0px var(--quarternary);
 }
 
@@ -207,10 +206,9 @@ body {
 	justify-content: space-between;
 }
 
-.air-quality-rating {
+#air-quality-rating {
 	margin-left: 15px;
 	font-size: 1.2rem;
-	color: var(--orange); /* <-- temporary */
 }
 
 /* Active Text */
