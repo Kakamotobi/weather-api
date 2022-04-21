@@ -42,8 +42,10 @@ for (let city of majorCity) {
 		const data = await fetchData(api1, api2);
 		if (data) {
 			displayData(data);
-			majorCities.querySelector(".active")?.classList.remove("active");
-			city.classList.add("active");
+			majorCities
+				.querySelector(".text-active")
+				?.classList.remove("text-active");
+			city.classList.add("text-active");
 		}
 	});
 }

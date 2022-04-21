@@ -45,11 +45,18 @@ body {
 
 .summary {
 	width: fit-content;
-	padding: 0 0 20px 50px;
+	min-width: 500px;
+	padding: 20px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(1.2px);
+}
+
+.container-wrapper {
 	display: flex;
 	align-items: flex-end;
 	column-gap: 20px;
-	backdrop-filter: blur(1.2px);
 }
 
 .temp-container {
@@ -196,24 +203,26 @@ body {
 	flex-direction: column;
 	flex-grow: 1;
 	box-shadow: inset -1px -1px 3px 0px var(--secondary);
+}
+
+.weather-information ul,
+.air-quality-information ul {
+	flex-grow: 1;
 	list-style: none;
 	line-height: 2;
 }
 
 .information {
 	display: flex;
-	flex-grow: 1;
 	justify-content: space-between;
+	flex-grow: 1;
 }
+
+
 
 #air-quality-rating {
 	margin-left: 15px;
 	font-size: 1.2rem;
-}
-
-/* Active Text */
-.active {
-	color: var(--text-primary);
 }
 
 /* Air Quality Rating Styles */
@@ -239,4 +248,41 @@ body {
 
 .hazardous {
 	color: var(--black);
+}
+
+/* Loader */
+.loader {
+	width: 30px;
+	height: 30px;
+	margin: 40px auto;
+	display: none;
+	border: 3px solid var(--text-primary);
+	border-top: 3px solid var(--text-tertiary);
+	border-right: 3px solid var(--text-tertiary);
+	border-bottom: 3px solid var(--text-tertiary);
+	border-radius: 50%;
+	animation: spin 1500ms linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Active Text */
+.text-active {
+	color: var(--text-primary);
+}
+
+/* Active Display */
+.active {
+	display: block;
+}
+
+.non-active {
+	display: none;
 }

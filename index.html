@@ -16,21 +16,25 @@
 	<body>
 		<section class="main-panel">
 			<div class="summary">
-				<div class="temp-container">
-					<div class="temp-high-low">
-						<span class="temp-high">-</span>
-						<span class="temp-low">-</span>
+				<div class="container-wrapper">
+					<div class="temp-container">
+						<div class="temp-high-low">
+							<span class="temp-high"></span>
+							<span class="temp-low"></span>
+						</div>
+						<span class="temp"></span>
 					</div>
-					<span class="temp">-&#176;</span>
+					<div class="location-info-container">
+						<h1 class="location"></h1>
+						<small class="time-date"></small>
+					</div>
+					<div class="weather-info-container">
+						<span class="weather-icon"></span>
+						<span class="weather-desc"></span>
+					</div>
 				</div>
-				<div class="location-info-container">
-					<h1 class="location">-, -</h1>
-					<small class="time-date">-</small>
-				</div>
-				<div class="weather-info-container">
-					<span class="weather-icon">-</span>
-					<span class="weather-desc">-</span>
-				</div>
+
+				<div class="loader"></div>
 			</div>
 		</section>
 
@@ -60,50 +64,30 @@
 			</div>
 
 			<div class="more-info-section">
-				<ul class="weather-information">
+				<div class="weather-information">
 					<h3>Weather Info</h3>
-					<li class="information">
-						<span>Feels like</span><span id="feels-like">-&#176;</span>
-					</li>
-					<li class="information">
-						<span>UV</span><span id="uv-index">-</span>
-					</li>
-					<li class="information">
-						<span>Wind</span><span id="wind">-km/h</span>
-					</li>
-					<li class="information">
-						<span>Humidity</span><span id="humidity">-%</span>
-					</li>
-					<li class="information">
-						<span>Precipitation</span><span id="precipitation">-mm</span>
-					</li>
-					<li class="information">
-						<span>Visibility</span><span id="visibility">-km</span>
-					</li>
-				</ul>
+					<ul>
+						<li class="information" id="feels-like"></li>
+						<li class="information" id="uv-index"></li>
+						<li class="information" id="wind"></li>
+						<li class="information" id="humidity"></li>
+						<li class="information" id="precipitation"></li>
+						<li class="information" id="visibility"></li>
+						<div class="loader"></div>
+					</ul>
+				</div>
 
-				<ul class="air-quality-information">
-					<h3>Air Quality<span id="air-quality-rating">-</span></h3>
-					<li class="information">
-						<span>PM<sub>10</sub></span
-						><span id="pm10">-μg/m<sup>3</sup></span>
-					</li>
-					<li class="information">
-						<span>PM<sub>2.5</sub></span
-						><span id="pm2_5">-μg/m<sup>3</sup></span>
-					</li>
-					<li class="information">
-						<span>O<sub>3</sub></span
-						><span id="ozone">-μg/m<sup>3</sup></span>
-					</li>
-					<li class="information">
-						<span>CO</span><span id="carbon-monoxide">-μg/m<sup>3</sup></span>
-					</li>
-					<li class="information">
-						<span>NO<sub>2</sub></span
-						><span id="nitrogen-dioxide">-μg/m<sup>3</sup></span>
-					</li>
-				</ul>
+				<div class="air-quality-information">
+					<h3>Air Quality<span id="air-quality-rating"></span></h3>
+					<ul>
+						<li class="information" id="pm10"></li>
+						<li class="information" id="pm2_5"></li>
+						<li class="information" id="ozone"></li>
+						<li class="information" id="carbon-monoxide"></li>
+						<li class="information" id="nitrogen-dioxide"></li>
+						<div class="loader"></div>
+					</ul>
+				</div>
 			</div>
 		</section>
 
