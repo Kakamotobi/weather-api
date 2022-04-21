@@ -1,8 +1,6 @@
 :root {
 	--primary: #fffffffa;
-	--secondary: #f5f5f7aa;
-	--tertiary: #8f8f8f;
-	--quarternary: #262626;
+	--secondary: #262626;
 	--blue: #89cffb;
 	--green: #2bc62b;
 	--yellow: #c8c840;
@@ -10,11 +8,11 @@
 	--red: #fb6060;
 	--black: #2f2f2f;
 	--text: #fffffffa;
+	--text-secondary: #f5f5f7aa;
+	--text-tertiary: #9c9c9c;
 }
 
 .night {
 	--primary: #262626;
-	--secondary: #8f8f8f;
-	--tertiary: #f5f5f7aa;
-	--quarternary: #fffffffa;
+	--secondary: #fffffffa;
 }

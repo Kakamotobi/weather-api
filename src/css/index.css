@@ -19,7 +19,7 @@
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 8px;
-	box-shadow: inset 0 0 1px 2px var(--quarternary);
+	box-shadow: inset 0 0 1px 2px var(--secondary);
 }
 
 body {
@@ -83,7 +83,7 @@ body {
 
 .time-date {
 	font-size: 1rem;
-	color: var(--secondary);
+	color: var(--text-tertiary);
 }
 
 .weather-info-container {
@@ -104,7 +104,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	backdrop-filter: blur(20px);
-	box-shadow: -1px 0 10px 1px var(--quarternary);
+	box-shadow: 0 0 8px 1px var(--secondary);
 }
 
 .side-panel h3 {
@@ -113,7 +113,7 @@ body {
 }
 
 .search-section {
-	box-shadow: inset -1px -1px 3px 0px var(--quarternary);
+	box-shadow: inset -1px -1px 3px 0px var(--secondary);
 }
 
 .search-form {
@@ -127,7 +127,7 @@ body {
 	flex-grow: 1;
 	background: transparent;
 	border: none;
-	box-shadow: inset -1px -1px 3px 0px var(--quarternary);
+	box-shadow: inset -1px -1px 3px 0px var(--secondary);
 	outline: none;
 	color: var(--text);
 	transition: all 150ms ease-out;
@@ -135,11 +135,11 @@ body {
 
 .search-input:hover,
 .search-input:focus {
-	box-shadow: inset -1px -1px 6px 0px var(--quarternary);
+	box-shadow: inset -1px -1px 8px 0px var(--secondary);
 }
 
 .search-input::placeholder {
-	color: var(--secondary);
+	color: var(--text-tertiary);
 	transition: all 250ms ease-out;
 }
 
@@ -158,7 +158,7 @@ body {
 }
 
 .search-btn svg:hover .search-btn-img {
-	fill: var(--primary);
+	fill: var(--text);
 }
 
 .search-btn-img {
@@ -172,21 +172,21 @@ body {
 }
 
 .major-city {
-	color: var(--secondary);
+	color: var(--text-secondary);
 	transition: all 150ms ease-out;
 	cursor: pointer;
 }
 
 .major-city:hover {
-	color: var(--primary);
+	color: var(--text);
 }
 
 .more-info-section {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	box-shadow: inset -1px -1px 3px 0px var(--quarternary);
-	overflow-y: scroll;
+	box-shadow: inset -1px -1px 3px 0px var(--secondary);
+	overflow-y: auto;
 }
 
 .weather-information,
@@ -195,7 +195,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	box-shadow: inset -1px -1px 3px 0px var(--quarternary);
+	box-shadow: inset -1px -1px 3px 0px var(--secondary);
 	list-style: none;
 	line-height: 2;
 }
