@@ -81,7 +81,7 @@ const formatTimeAndDate = (dateStr) => {
 
 	const today = new Date(dateStr);
 
-	const hours = today.getHours() % 12;
+	const hours = today.getHours() === 12 ? 12 : today.getHours() % 12;
 	const mins = today.getMinutes().toString().padStart(2, "0");
 	const meridiem = today.getHours() >= 12 ? "PM" : "AM";
 	const day = days[today.getDay()];
