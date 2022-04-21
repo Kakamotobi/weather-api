@@ -62,7 +62,7 @@ const findImg = (code) => {
 	else if (code === 1087) return "thunder";
 };
 
-// Format Time and Date Format
+// Format Time and Date
 const formatTimeAndDate = (dateStr) => {
 	const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
 	const months = [
@@ -122,11 +122,23 @@ const kelvinToCelsius = (x) => {
 
 // Fetch Data from API
 const fetchData = async (api1, api2) => {
-	const res1 = await fetch(api1);
-	const data1 = await res1.json();
-	const res2 = await fetch(api2);
-	const data2 = await res2.json();
-	return { ...data1, ...data2 };
+	try {
+		const res1 = await fetch(api1);
+		const res2 = await fetch(api2);
+
+		if (!res1.ok || !res2.ok) {
+			throw new Error(!res1.ok ? res1.status : res2.status);
+		}
+
+		const data1 = await res1.json();
+		const data2 = await res2.json();
+		return { ...data1, ...data2 };
+	} catch (err) {
+		if (err.message === "400") displayError("Enter a valid city");
+		else if (err.message === "401" || err.message === "403")
+			displayError("Something went wrong with the API");
+		else displayError("Oops! Please try again");
+	}
 };
 
 // Display Data
@@ -178,4 +190,29 @@ const displayData = (data) => {
 	nitrogenDioxideDisplay.innerHTML = `${current.air_quality["no2"].toFixed(
 		1
 	)}μg/m<sup>3</sup>`;
+};
+
+// Display Error
+const displayError = (msg) => {
+	// Main Panel
+	tempHighDisplay.textContent = "";
+	tempLowDisplay.textContent = "";
+	tempDisplay.innerHTML = "-&#176;";
+	locationDisplay.textContent = msg;
+	timeDateDisplay.textContent = "";
+	weatherIconDisplay.innerHTML = "";
+	weatherDescDisplay.textContent = "";
+	// Side Panel
+	feelsLikeDisplay.innerHTML = "-&#176;";
+	uvIndexDisplay.textContent = "-";
+	windDisplay.textContent = "-km/h";
+	humidityDisplay.textContent = "-%";
+	precipitationDisplay.textContent = "-mm";
+	visibilityDisplay.textContent = "-km";
+	airQualityRatingDisplay.textContent = "";
+	pm10Display.innerHTML = "-μg/m<sup>3</sup>";
+	pm2_5Display.innerHTML = "-μg/m<sup>3</sup>";
+	ozoneDisplay.innerHTML = "-μg/m<sup>3</sup>";
+	carbonMonoxideDisplay.innerHTML = "-μg/m<sup>3</sup>";
+	nitrogenDioxideDisplay.innerHTML = "-μg/m<sup>3</sup>";
 };

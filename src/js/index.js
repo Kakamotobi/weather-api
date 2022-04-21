@@ -10,10 +10,11 @@ window.addEventListener("load", () => {
 			const api2 = `${BASE_URL2}/weather?lat=${lat}&lon=${lon}&appid=${API_KEY2}`;
 
 			const data = await fetchData(api1, api2);
-			displayData(data);
+			if (data) displayData(data);
 		});
 	} else {
-		timeDateDisplay.textContent = "Browser Doesn't Support Geolocation";
+		locationDisplay.innerText = "Browser doesn't support geolocation";
+		timeDateDisplay.innerText = "Try searching";
 	}
 });
 
@@ -24,9 +25,11 @@ form.addEventListener("submit", async (evt) => {
 	const api2 = `${BASE_URL2}/weather?q=${searchInput.value}&appid=${API_KEY2}`;
 
 	const data = await fetchData(api1, api2);
-	displayData(data);
-	searchInput.value = "";
-	searchInput.blur();
+	if (data) {
+		displayData(data);
+		searchInput.value = "";
+		searchInput.blur();
+	}
 });
 
 // Major Cities Event Listener
@@ -37,9 +40,10 @@ for (let city of majorCity) {
 		const api2 = `${BASE_URL2}/weather?q=${cityName}&appid=${API_KEY2}`;
 
 		const data = await fetchData(api1, api2);
-		displayData(data);
-
-		majorCities.querySelector(".active")?.classList.remove("active");
-		city.classList.add("active");
+		if (data) {
+			displayData(data);
+			majorCities.querySelector(".active")?.classList.remove("active");
+			city.classList.add("active");
+		}
 	});
 }
