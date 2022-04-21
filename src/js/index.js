@@ -26,4 +26,20 @@ form.addEventListener("submit", async (evt) => {
 	const data = await fetchData(api1, api2);
 	displayData(data);
 	searchInput.value = "";
+	searchInput.blur();
 });
+
+// Major Cities Event Listener
+for (let city of majorCity) {
+	city.addEventListener("click", async (evt) => {
+		const cityName = evt.target.innerText;
+		const api1 = `${BASE_URL1}/current.json?q=${cityName}&aqi=yes&key=${API_KEY1}`;
+		const api2 = `${BASE_URL2}/weather?q=${cityName}&appid=${API_KEY2}`;
+
+		const data = await fetchData(api1, api2);
+		displayData(data);
+
+		majorCities.querySelector(".active")?.classList.remove("active");
+		city.classList.add("active");
+	});
+}
