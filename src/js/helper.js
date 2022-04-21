@@ -1,7 +1,7 @@
 // Find Background Image
 const findImg = (code) => {
 	if (code === 1000) return "clear";
-	else if (code === 1003 || 1006) return "cloudy";
+	else if (code === 1003 || code === 1006) return "cloudy";
 	else if (code === 1009) return "overcase";
 	else if (code === 1030 || code === 1135 || code === 1147) return "fog";
 	else if (

@@ -225,7 +225,7 @@ body {
 	color: var(--green);
 }
 
-.unhealthy-for-sensitive-group {
+.unhealthy-sensitive {
 	color: var(--yellow);
 }
 
