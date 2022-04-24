@@ -1,21 +1,17 @@
-# weather-api
+# weather-app
 
 ## Description
 
-Weather web app using APIs from [Weather API - OpenWeatherMap](https://openweathermap.org/api).
+This is a weather web application using APIs from [Weather API - OpenWeatherMap](https://openweathermap.org/api) and [Free Weather API - WeatherAPI.com](https://www.weatherapi.com/).
 
 ## Features
 
-- Use user's current location (long, lat) to display weather information including:
-  - City and Country
-  - Weather icon
-  - Current temperature (incl. max and min), which can be converted between °C and °F when clicked
-  - Description of the weather
-- Another section where users can search for the weather in another city.
+- Use user's current location to display relevant weather information.
+- Search for the weather in another city.
 
 ## Demo
 
-![demo](weather-api.gif)
+![demo](weather-app-v2.gif)
 
 ## Link
 
@@ -24,17 +20,19 @@ Live-site URL: https://weather-api-gamma.vercel.app
 ## Development Process
 
 ### Built With
+
 - HTML
 - CSS
 - JavaScript
 
-### Applied Concepts
-- JS
-  - Block and Lexical Scoping
-  - `navigator.geolocation.getCurrentPosition()`
-  - Access data from API using `fetch()`
-  - API and DOM Manipulation
-- Mixed Content Page (Safari)
+### Key Aspects
 
-### Queries
-- Function with a lot of parameters. How many is too much?
+- `navigator.geolocation.getCurrentPosition()`.
+- DOM manipulation.
+
+## Updates
+
+- Application redesign.
+  - Layout and style change.
+  - Air quality information included.
+  - Loader for user feedback.
