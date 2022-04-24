@@ -15,7 +15,7 @@ This is a weather web application using APIs from [Weather API - OpenWeatherMap]
 
 ## Link
 
-Live-site URL: https://weather-api-gamma.vercel.app
+Live-site URL: https://weather-app-kakamotobi.vercel.app/
 
 ## Development Process
 
