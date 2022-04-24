@@ -27,6 +27,17 @@ form.addEventListener("submit", async (evt) => {
 	const data = await fetchData(api1, api2);
 	if (data) {
 		displayData(data);
+
+		majorCities.querySelector(".text-active")?.classList.remove("text-active");
+		for (let city of majorCity) {
+			if (
+				city.getAttribute("name") ===
+				searchInput.value.toLowerCase().replace(/ /g, "")
+			) {
+				city.classList.add("text-active");
+			}
+		}
+
 		searchInput.value = "";
 		searchInput.blur();
 	}
