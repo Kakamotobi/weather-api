@@ -79,7 +79,13 @@ const formatTimeAndDate = (dateStr) => {
 		"Dec",
 	];
 
-	const today = new Date(dateStr);
+	let parsedDateStr = dateStr.split(" ");
+	parsedDateStr =
+		parsedDateStr[1].length === 4
+			? parsedDateStr.join("T0")
+			: parsedDateStr.join("T");
+
+	const today = new Date(parsedDateStr);
 
 	const hours = today.getHours() === 12 ? 12 : today.getHours() % 12;
 	const mins = today.getMinutes().toString().padStart(2, "0");
