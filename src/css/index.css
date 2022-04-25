@@ -20,6 +20,7 @@
 ::-webkit-scrollbar-thumb {
 	border-radius: 8px;
 	box-shadow: inset 0 0 3px 2px var(--secondary);
+	-webkit-box-shadow: inset 0 0 3px 2px var(--secondary);
 }
 
 body {
@@ -111,7 +112,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 	box-shadow: 0 0 8px 1px var(--secondary);
+	-webkit-box-shadow: 0 0 8px 1px var(--secondary);
 }
 
 .side-panel h3 {
@@ -121,6 +124,7 @@ body {
 
 .search-section {
 	box-shadow: inset -1px -1px 3px 0px var(--secondary);
+	-webkit-box-shadow: inset -1px -1px 3px 0px var(--secondary);
 }
 
 .search-form {
@@ -135,6 +139,7 @@ body {
 	background: transparent;
 	border: none;
 	box-shadow: inset -1px -1px 3px 0px var(--secondary);
+	-webkit-box-shadow: inset -1px -1px 3px 0px var(--secondary);
 	outline: none;
 	color: var(--text-primary);
 	transition: all 150ms ease-out;
@@ -143,6 +148,7 @@ body {
 .search-input:hover,
 .search-input:focus {
 	box-shadow: inset -1px -1px 8px 0px var(--secondary);
+	-webkit-box-shadow: inset -1px -1px 8px 0px var(--secondary);
 }
 
 .search-input::placeholder {
@@ -193,23 +199,25 @@ body {
 	flex-direction: column;
 	flex-grow: 1;
 	box-shadow: inset -1px -1px 3px 0px var(--secondary);
+	-webkit-box-shadow: inset -1px -1px 3px 0px var(--secondary);
 	overflow-y: auto;
 }
 
 .weather-information,
 .air-quality-information {
-	padding: 15px 30px 20px;
+	padding: 20px 30px;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 	box-shadow: inset -1px -1px 3px 0px var(--secondary);
+	-webkit-box-shadow: inset -1px -1px 3px 0px var(--secondary);
 }
 
 .weather-information ul,
 .air-quality-information ul {
 	flex-grow: 1;
 	list-style: none;
-	line-height: 2;
+	line-height: 2.8;
 }
 
 .information {
