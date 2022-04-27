@@ -121,11 +121,6 @@ const rateAirQuality = (rate) => {
 	return ratings[rate];
 };
 
-// Convert Kelvin to Celsius
-const kelvinToCelsius = (x) => {
-	return x - 273.15;
-};
-
 // Start Loading
 const startLoading = () => {
 	// Deactivate content
@@ -155,11 +150,9 @@ const endLoading = () => {
 // Fetch Data from API
 const fetchData = async (api1, api2) => {
 	try {
-		// Start loading animation
 		startLoading();
 
-		const res1 = await fetch(api1);
-		const res2 = await fetch(api2);
+		const [res1, res2] = await Promise.all([fetch(api1), fetch(api2)]);
 
 		if (!res1.ok || !res2.ok) {
 			throw new Error(!res1.ok ? res1.status : res2.status);
@@ -168,12 +161,10 @@ const fetchData = async (api1, api2) => {
 		const data1 = await res1.json();
 		const data2 = await res2.json();
 
-		// End loading animation
 		endLoading();
 
 		return { ...data1, ...data2 };
 	} catch (err) {
-		// End loading animation
 		endLoading();
 
 		if (err.message === "400") displayError("Enter a valid city");
@@ -198,18 +189,16 @@ const displayData = (data) => {
 		body.classList.remove("night");
 	}
 	// Main Panel
-	tempHighDisplay.textContent = Math.round(kelvinToCelsius(main.temp_max));
-	tempLowDisplay.textContent = Math.round(kelvinToCelsius(main.temp_min));
-	tempDisplay.innerHTML = `${Math.round(kelvinToCelsius(main.temp))}&#176;`;
+	tempHighDisplay.textContent = Math.round(main.temp_max);
+	tempLowDisplay.textContent = Math.round(main.temp_min);
+	tempDisplay.innerHTML = `${Math.round(main.temp)}&#176;`;
 	locationDisplay.textContent = `${name}, ${sys.country}`;
 	timeDateDisplay.textContent = formatTimeAndDate(location.localtime);
 	weatherIconDisplay.innerHTML = `<img class="weather-icon-img" src="${current.condition.icon}" />`;
 	weatherDescDisplay.textContent = current.condition.text;
 	// Side Panel
 	feelsLikeDisplay.innerHTML = `
-	<span>Feels like</span><span>${Math.round(
-		kelvinToCelsius(main.feels_like)
-	)}&#176;</span>
+	<span>Feels like</span><span>${Math.round(main.feels_like)}&#176;</span>
 	`;
 	uvIndexDisplay.innerHTML = `<span>UV</span><span>${current.uv}</span>`;
 	windDisplay.innerHTML = `<span>Wind</span><span>${current.wind_kph}km/h</span>`;
