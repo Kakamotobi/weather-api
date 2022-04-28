@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
 form.addEventListener("submit", async (evt) => {
 	evt.preventDefault();
 	const api1 = `${BASE_URL1}/current.json?q=${searchInput.value}&aqi=yes&key=${API_KEY1}`;
-	const api2 = `${BASE_URL2}/weather?q=${searchInput.value}&appid=${API_KEY2}`;
+	const api2 = `${BASE_URL2}/weather?q=${searchInput.value}&units=metric&appid=${API_KEY2}`;
 
 	const data = await fetchData(api1, api2);
 	if (data) {
@@ -55,7 +55,7 @@ for (let city of majorCity) {
 	city.addEventListener("click", async (evt) => {
 		const cityName = evt.target.innerText;
 		const api1 = `${BASE_URL1}/current.json?q=${cityName}&aqi=yes&key=${API_KEY1}`;
-		const api2 = `${BASE_URL2}/weather?q=${cityName}&appid=${API_KEY2}`;
+		const api2 = `${BASE_URL2}/weather?q=${cityName}&units=metric&appid=${API_KEY2}`;
 
 		const data = await fetchData(api1, api2);
 		if (data) {
