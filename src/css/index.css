@@ -25,6 +25,18 @@
 
 body {
 	height: 100vh;
+	background-color: var(--black);
+	color: var(--text-primary);
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -32,7 +44,6 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	color: var(--text-primary);
 }
 
 /* Main Panel */
@@ -282,13 +293,4 @@ body {
 /* Active Text */
 .text-active {
 	color: var(--text-primary);
-}
-
-/* Active Display */
-.active {
-	display: block;
-}
-
-.non-active {
-	display: none;
 }
