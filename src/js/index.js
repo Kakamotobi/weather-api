@@ -1,7 +1,7 @@
-// Geolocation Event Listener
-window.addEventListener("load", () => {
-	// If browser supports geolocation
+// Current Location
+window.addEventListener("DOMContentLoaded", async () => {
 	if (navigator.geolocation) {
+		startLoader();
 		navigator.geolocation.getCurrentPosition(
 			async (position) => {
 				const lat = position.coords.latitude;
@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
 	}
 });
 
-// Search Event Listener
+// Search Location
 form.addEventListener("submit", async (evt) => {
 	evt.preventDefault();
 	const api1 = `${BASE_URL1}/current.json?q=${searchInput.value}&aqi=yes&key=${API_KEY1}`;
@@ -50,7 +50,7 @@ form.addEventListener("submit", async (evt) => {
 	}
 });
 
-// Major Cities Event Listener
+// Major Cities
 for (let city of majorCity) {
 	city.addEventListener("click", async (evt) => {
 		const cityName = evt.target.innerText;
