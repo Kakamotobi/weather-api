@@ -1,4 +1,3 @@
-// DOM Objects
 const body = document.querySelector("body");
 const form = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
